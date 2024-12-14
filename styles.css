@@ -1,0 +1,60 @@
+body{
+  background-color:black;
+  overflow: hidden; /* Prevents vertical and horizontal scrolling */
+  margin: 0; /* Removes any default body margin */
+}
+
+/* Container for full-screen images */
+.hover-image-container {
+  display: block;
+  position: relative;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Removes default spacing */
+  overflow: hidden; /* Ensures no overflow */
+}
+
+.hover-image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Forces the image to stretch horizontally */
+  height: 100%; /* Forces the image to stretch vertically */
+}
+
+.hover-image-container .hover-gif {
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease; /* Smooth fade transition */
+  pointer-events: none; /* Prevent interaction */
+}
+
+.hover-image-container:hover .hover-gif {
+  opacity: 1; /* Show the GIF on hover */
+}
+
+.hover-image-container:hover .static-png {
+  opacity: 0; /* Hide the PNG on hover */
+}
+
+
+
+
+/* Hide desktop content on mobile */
+.desktop-content {
+  display: none;
+}
+
+/* Show mobile content on smaller screens */
+.mobile-content {
+  display: block;
+}
+
+/* On larger screens, switch visibility */
+@media (min-width: 768px) {
+  .desktop-content {
+    display: block;
+  }
+  .mobile-content {
+    display: none;
+  }
+}
