@@ -58,3 +58,25 @@ body{
     display: none;
   }
 }
+
+/* Fullscreen video container */
+.fullscreen-video {
+  position: fixed; /* Ensures it stays in place */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevents any part of the video from overflowing */
+  margin: 0; /* Removes default spacing */
+}
+
+/* Force video to stretch */
+.fullscreen-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Stretch video horizontally */
+  height: 100%; /* Stretch video vertically */
+  object-fit: none; /* Disable aspect ratio preservation */
+  transform: scale(1); /* Ensures it stays stretched without shifting */
+}
